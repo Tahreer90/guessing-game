@@ -28,6 +28,52 @@
   color: #61dafb;
 }
 
+.button {
+  background-color: burlywood;
+  border-radius: 4px;
+  height: 40px;
+  border: none;
+  width: 140px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.input {
+  height: 30px;
+  width: 130px;
+  margin: 30px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.text {
+  color: rgb(49, 31, 8);
+  text-align: center;
+  font-style: italic;
+  font-family: fantasy;
+}
+
+.para {
+  color: darkgoldenrod;
+  text-align: center;
+  font-family: fantasy;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.img {
+  height: 350px;
+  border-radius: 8px;
+}
+
+.div {
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
