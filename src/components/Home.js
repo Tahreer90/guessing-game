@@ -4,28 +4,26 @@ import { useState } from "react";
 
 function Home() {
   const [number, setNumber] = useState("");
-  const [attempt, setAttempt] = useState("");
+  const [attempt, setAttempt] = useState(4);
   const [correctNumber, setCorrectNumber] = useState(
     Math.floor(Math.random() * 100 + 1)
   );
-
-  let counter = 4;
-  counter--;
+  setAttempt(attempt - 1);
   const losing = () => {
-    if (attempt == 4) {
-      counter = 0;
+    if (attempt === 0) {
+      alert("you lost this turn");
     } else {
-      console.log("go on");
+      console.log("move on");
     }
   };
 
-  const winning = () => {
-    if (number === correctNumber) {
-      console.log("you win");
-    } else {
-      console.log("Try again");
-    }
-  };
+  //   const winning = () => {
+  //     if (number === correctNumber) {
+  //       console.log("you win");
+  //     } else {
+  //       console.log("Try again");
+  //     }
+  //   };
 
   return (
     <div className="div">
@@ -47,9 +45,7 @@ function Home() {
         onChange={(event) => setNumber(event.target.value)}
       />
       <br />
-      <button className="button" onClick={winning}>
-        {"New Batch"}
-      </button>
+      <button className="button">{"New Batch"}</button>
       <button className="button" onClick={losing}>
         {"Submit"}
       </button>
