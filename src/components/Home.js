@@ -8,22 +8,47 @@ function Home() {
   const [correctNumber, setCorrectNumber] = useState(
     Math.floor(Math.random() * 100 + 1)
   );
-  setAttempt(attempt - 1);
+  const [round, setRound] = useState(1);
+  
+
+  // const [arrayNum, setArrayNum] = useState([
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  //   Math.floor(Math.random() * 100),
+  // ]);
+  
+  };
+  function reset() {
+    alert("you lost all of your attempts");
+    setRound(1);
+    setNumber("");
+    setAttempt(4);
+    setCorrectNumber(Math.floor(Math.random() * 100 + 1));
+  }
+
   const losing = () => {
     if (attempt === 0) {
-      alert("you lost this turn");
+      reset();
     } else {
+      setAttempt(attempt - 1);
       console.log("move on");
     }
   };
 
-  //   const winning = () => {
-  //     if (number === correctNumber) {
-  //       console.log("you win");
-  //     } else {
-  //       console.log("Try again");
-  //     }
-  //   };
+  const winning = () => {
+    if (number === correctNumber) {
+      alert("You won!");
+    } else {
+      console.log("Try again");
+    }
+  };
 
   return (
     <div className="div">
@@ -45,7 +70,7 @@ function Home() {
         onChange={(event) => setNumber(event.target.value)}
       />
       <br />
-      <button className="button">{"New Batch"}</button>
+      <button className="button">{"Hint"}</button>
       <button className="button" onClick={losing}>
         {"Submit"}
       </button>
